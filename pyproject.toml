@@ -1,0 +1,11 @@
+[project]
+name = "avfallsor-mqtt-py"
+version = "0.1.0"
+description = "Fetch waste collection dates from Avfall Sør and publish to MQTT for HomeAssistant"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv",
+    "requests",
+    "beautifulsoup4",
+    "paho-mqtt",
+]
