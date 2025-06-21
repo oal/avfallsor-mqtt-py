@@ -11,6 +11,7 @@ import json
 import logging
 from datetime import datetime
 import re
+import time
 import requests
 from bs4 import BeautifulSoup
 import paho.mqtt.client as mqtt
@@ -239,10 +240,12 @@ class AvfallSorMQTT:
                     json.dumps(discovery_message),
                     retain=True
                 )
-                
+                time.sleep(0.250)
+
                 # Publish the state
                 self.mqtt_client.publish(state_topic, date_str, retain=True)
-                
+                time.sleep(0.250)
+
                 logger.info(f"Published {waste_type} collection date: {date_str}")
             
             # Disconnect from MQTT broker
